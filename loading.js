@@ -19,15 +19,17 @@
     text("count", known ? (total - needed) + " / " + total + " DATEIEN" : "BITTE EINEN MOMENT");
     if (known && needed === 0) text("file", "Dateidownloads abgeschlossen · Warte auf Spielstart");
   }
-  window.GameDetails = function (servername, serverurl, mapname, maxplayers, steamid, gamemode) {
+  window.GameDetails = function (servername, serverurl, mapname, maxplayers, steamid, gamemode, volume) {
     nativeEvent(); text("server", servername || config.name || "RealLifeRP");
     text("map", mapname || "Wird abgerufen"); text("gamemode", gamemode || "DarkRP");
+    if (window.LoadingMusic) window.LoadingMusic.setGameVolume(volume);
   };
   window.SetFilesTotal = function (value) { nativeEvent(); total = number(value); progress(); };
   window.SetFilesNeeded = function (value) { nativeEvent(); needed = number(value); progress(); };
   window.DownloadingFile = function (name) { nativeEvent(); text("file", name); text("status", "Serverinhalte werden geladen"); };
   window.SetStatusChanged = function (status) { nativeEvent(); text("status", status); };
   text("brand", config.name || "RealLifeRP"); text("server", config.name || "RealLifeRP");
+  if (config.map) text("map", config.map);
   text("footer-brand", (config.name || "RealLifeRP").toUpperCase());
   text("file", "Willkommen bei " + (config.name || "RealLifeRP") + ".");
   if (config.tagline) text("tagline", config.tagline);
@@ -45,7 +47,7 @@
   progress();
   // Explicit opt-in only. Production never invents connection or player data.
   if (/(?:\?|&)preview=1(?:&|$)/.test(window.location.search)) {
-    el("preview-label").hidden = false; text("map", "rp_downtown_v4c_v2 (Demo)");
+    el("preview-label").hidden = false; text("map", (config.map || "rp_evocity_rlrp") + " (Demo)");
     total = 240; needed = 172; progress(); text("status", "Serverinhalte werden geladen");
     text("file", "materials/models/city/building_01.vmt (Demo)");
     demoTimer = setInterval(function () {
