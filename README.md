@@ -2,33 +2,28 @@
 
 Live: https://master290600.github.io/realliferp-loading/
 
-## Eigene Musik
+## Musik hochladen
 
-Einfach eine MP3 namens **music.mp3** über **Add file → Upload files** in den Repository-Stamm hochladen. Nach dem GitHub-Pages-Deployment ist sie aktiv. Titel, Lautstärke und Autoplay stehen in **config.js**. Eine fertige Musikdatei wurde nicht mitgeliefert.
+Beliebige MP3s (auch mehrere) im Repository-Stamm oder einem Unterordner hochladen. **GitHub Actions erzeugt und veröffentlicht die Playlist automatisch.** Nach erfolgreicher Veröffentlichung den Screen neu laden. Identische Dateien zählen nur einmal. Titelreihenfolge ist standardmäßig zufällig. Play/Pause, Lautstärke und **» Nächstes Lied** stehen im Radio zur Verfügung.
 
-[Ausführliche Musik-Anleitung](MUSIC.md)
+[Musik-Anleitung und Einstellungen](MUSIC.md)
 
 ## Garry's Mod
 
-Serverseitig in garrysmod/cfg/autoexec.cfg:
+In der serverseitigen garrysmod/cfg/autoexec.cfg:
 
 ```cfg
 sv_loadingurl "https://master290600.github.io/realliferp-loading/"
 ```
 
-Alternativ Startparameter `+sv_loadingurl` mit derselben URL. `?preview=1` ist ausschließlich eine gekennzeichnete Designvorschau mit simulierten Downloaddaten.
+Alternativ +sv_loadingurl als Startparameter. ?preview=1 zeigt markierte Demo-Downloaddaten.
 
 ## Gestaltung
 
-Fünf unveränderte Originalaufnahmen der Map **rp_evocity_rlrp**, vom Nutzer bereitgestellt. Farblook und Kamerafahrt über CSS. Vier separat generierte transparente Figuren im GTA-V-Ladebildstil, unabhängig vom Hintergrund bewegt. Keine generierten Ersatzgebäude und keine anderen Maps.
+Fünf unveränderte Originalaufnahmen von rp_evocity_rlrp und vier separat generierte transparente Figuren im GTA-V-Ladebildstil. Figur und Hintergrund bewegen sich unabhängig. Die Stadt wurde nicht neu generiert. 16 Tipps wechseln alle 10 Sekunden, 6 Haupttexte mit Unterzeile alle 12 Sekunden. Bildwechsel alle 16 Sekunden; Animationen können pausiert werden.
 
-Bildwechsel alle 16 Sekunden. Animationen können pausiert werden; reduzierte Bewegung wird berücksichtigt. Das sind animierte Bildebenen, keine laufenden oder per Skelett animierten Figuren.
+## Veröffentlichung
 
-## Technik
+Pages-Quelle: GitHub Actions. .github/workflows/pages.yml verwendet build-playlist.cjs, um alle MP3s zu erfassen, gleiche Audiodateien anhand SHA-256 zusammenzufassen und einen vollständigen statischen Seitenstand nach _site zu kopieren. Es gibt keine separaten Titel-Commits und keine API-Abfragen aus dem Player. Die Playlist wird bei jedem Upload neu gebaut.
 
-Statisches HTML/CSS/JavaScript. Kein Backend, keine Tracker oder externen Fonts. Engine-Callbacks liefern Serverinfos, Status und Dateidownload-Fortschritt. 100 % Dateidownloads bedeutet noch keinen abgeschlossenen Spielbeitritt. Musik startet nach GameDetails und respektiert die Musiklautstärke des Spielers; normale Browser können Play benötigen.
-
-Die lokale Server-Konfiguration wurde nicht verändert. Ein echter DarkRP-Serverbeitritt ist noch separat zu prüfen.
-
-Technische Quelle: https://wiki.facepunch.com/gmod/Loading_URL
-
+Ein tatsächlicher DarkRP-Serverbeitritt ist weiterhin separat zu prüfen. Engine-Callbacks und Musiklautstärke: https://wiki.facepunch.com/gmod/Loading_URL

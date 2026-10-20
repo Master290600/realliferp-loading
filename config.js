@@ -15,10 +15,10 @@ window.LOADING_CONFIG = {
   accent: "#d5ad7a",
   // Optional: echter Discord-Einladungslink. Leer = Bereich ausblenden.
   discord: "",
-  // Einfach eine MP3 namens music.mp3 in den Repository-Stamm hochladen.
-  // Alternativ hier einen anderen Dateipfad oder direkten HTTPS-Audiolink setzen.
-  // src: "" schaltet Musik vollständig aus. Keine YouTube-/Spotify-Seitenlinks.
-  music: { src: "music.mp3", title: "RealLifeRP Radio", volume: 0.25, autoplay: true },
+  // Alle MP3s werden bei jeder Veröffentlichung automatisch in playlist.json erfasst.
+  // Beliebige Namen, auch im Ordner music/. Doppelte Dateiinhalte laufen nur einmal.
+  // auto: false verwendet stattdessen src oder eine manuelle tracks-Liste.
+  music: { auto: true, manifest: "playlist.json", src: "music.mp3", title: "RealLifeRP Radio", volume: 0.25, autoplay: true, shuffle: true },
   backgrounds: [
     { src: "images/rp_evocity_rlrp0000.jpg", character: "images/officer.png", label: "MITTEN IN EVOCITY", credit: "rp_evocity_rlrp · Originalaufnahme" },
     { src: "images/rp_evocity_rlrp0001.jpg", character: "images/mechanic.png", label: "DEIN NÄCHSTES GESCHÄFT", credit: "rp_evocity_rlrp · Originalaufnahme" },

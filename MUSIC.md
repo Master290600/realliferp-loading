@@ -1,30 +1,36 @@
 # Eigene Hintergrundmusik hinzufügen
 
-1. Dieses Repository öffnen: https://github.com/Master290600/realliferp-loading
-2. **Add file → Upload files** auswählen.
-3. Eine MP3-Datei mit dem exakten Namen **music.mp3** hochladen (klein geschrieben, direkt im Repository-Stamm neben index.html).
-4. **Commit changes** anklicken und die GitHub-Pages-Veröffentlichung abwarten.
+Beliebig viele MP3-Dateien über **Add file → Upload files** in dieses Repository hochladen: https://github.com/Master290600/realliferp-loading
 
-Danach ist die Musik für alle Spieler verfügbar. Das Hochladen oder Auswählen einer Datei nur im Browser würde sie nicht für andere Spieler speichern.
+Dateinamen dürfen frei gewählt werden. Auch Unterordner wie music/ und die Endung .MP3 werden erkannt. Nach jedem Upload erstellt GitHub Actions automatisch eine neue Playlist und veröffentlicht die Website. Warte, bis der Workflow **Publish loading screen and music playlist** erfolgreich ist, und lade den Screen danach neu.
 
-## Einstellungen
+## Wiedergabe
 
-In config.js:
+- Zufällige Reihenfolge bei jedem Öffnen; nach dem letzten Titel geht es wieder von vorne los.
+- Play/Pause und Lautstärkeregler bleiben erhalten.
+- **» / Nächstes Lied** springt weiter. Bei nur einem unterschiedlichen Lied ist der Button deaktiviert.
+- Identische Audiodateien unter mehreren Namen zählen als ein Titel. War.mp3 und music.mp3 enthalten aktuell dieselbe Datei.
+- Neue oder ersetzte Audiodateien erhalten eine Versionskennung gegen veraltete Browser-Caches.
+- Keine manuelle Titelliste und keine GitHub-API-Abfrage durch Spieler nötig.
+
+## Einstellungen in config.js
 
 ```js
 music: {
+  auto: true,
+  manifest: "playlist.json",
   src: "music.mp3",
-  title: "Mein Titel",
+  title: "RealLifeRP Radio",
   volume: 0.25,
-  autoplay: true
+  autoplay: true,
+  shuffle: true
 },
 ```
 
-Lautstärke: 0 bis 1. `src: ""` deaktiviert Musik. Andere relative Dateipfade und direkte HTTPS-Audiolinks sind möglich. YouTube-/Spotify-Seitenlinks funktionieren nicht als Audiodatei. Kleine MP3-Dateien vermeiden zusätzliche lange Downloads. Es ist noch kein Musiktitel enthalten.
+Die automatisch erzeugte playlist.json liegt in der veröffentlichten Website, nicht im Quellbranch. src dient als Rückfall, falls die Playlist nicht geladen werden kann. shuffle: false spielt alphabetisch. Für ausschließlich manuelle Titel auto: false setzen und tracks: [{src: "song-a.mp3", title: "Song A"}, {src: "song-b.mp3", title: "Song B"}] verwenden. Musik deaktivieren: auto: false und src: "" ohne tracks.
 
-Im Spiel startet die Musik nach GameDetails mit der konfigurierten Lautstärke multipliziert mit snd_musicvolume des Spielers. Ein Spieler mit Musiklautstärke 0 bleibt stumm. Manuelles Pausieren wird respektiert. In normalen Browsern kann Autoplay blockiert sein; dort Play verwenden. Fehlende oder fehlerhafte Musik beeinträchtigt den Ladefortschritt nicht.
+Im Spiel startet Musik nach GameDetails. Die tatsächliche Lautstärke ist die konfigurierte Lautstärke mal snd_musicvolume des Spielers. Musiklautstärke 0 bleibt stumm. In normalen Browsern kann ein Klick auf Play nötig sein. Manuelles Pausieren wird beibehalten. Bei einer defekten Audiodatei versucht der Player das nächste Lied; der Ladebildschirm läuft weiter.
 
-## Bildaufbau
+Die Stadtaufnahmen bleiben unveränderte Originale von rp_evocity_rlrp. Polizist, Mechanikerin, Arzt und Waffenhändler sind separate transparente Figurenebenen.
 
-Die fünf Stadtfotos sind byte-identische Kopien der vom Nutzer bereitgestellten Originalaufnahmen von rp_evocity_rlrp. Farbfilter, Zoom und leichte Kamerafahrt erfolgen ausschließlich im CSS. Polizist, Mechanikerin, Arzt und Waffenhändler sind separat generierte transparente PNGs im GTA-V-Ladebildstil. Figuren und Hintergrund bewegen sich auf unabhängigen Ebenen. Keine Lauf-, Skelett- oder Körperanimation. „Animation pausieren“ hält Kamerafahrt, Figurenbewegung und Bildwechsel an. Reduzierte Bewegung wird berücksichtigt.
-
+Veröffentlichung nach dem offiziellen GitHub-Pages-Verfahren: https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages

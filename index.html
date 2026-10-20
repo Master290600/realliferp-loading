@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#101214">
   <title>RealLifeRP · Willkommen in der Stadt</title>
   <link rel="stylesheet" href="styles.css?v=3">
-  <script src="config.js?v=4"></script>
-  <script src="music.js?v=2" defer></script>
+  <script src="config.js?v=5"></script>
+  <script src="music.js?v=5" defer></script>
   <script src="scenes.js?v=2" defer></script>
   <script src="loading.js?v=3" defer></script>
 </head>
@@ -38,12 +38,13 @@
     <footer>
       <div class="radio" id="radio">
         <button id="music-toggle" type="button" aria-label="Musik abspielen" aria-pressed="false" disabled>▶</button>
+        <button id="music-next" type="button" aria-label="Nächstes Lied" title="Nächstes Lied" disabled>»</button>
         <div class="radio-track"><span class="label">REALLIFERP RADIO</span><span id="music-title">Zurzeit ohne Musik</span></div>
         <div class="equalizer" id="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         <label class="volume-label" for="music-volume">Lautstärke</label><input id="music-volume" type="range" min="0" max="100" value="25" aria-label="Musiklautstärke">
         <span class="music-status" id="music-status" role="status"></span>
       </div>
-      <audio id="background-music" preload="none" loop></audio>
+      <audio id="background-music" preload="none"></audio>
       <div class="loading-top"><div class="status-wrap"><span class="spinner" aria-hidden="true"></span><span id="status" role="status">Verbindung wird vorbereitet</span></div><span class="percent" id="percent">•••</span></div>
       <div class="progress" id="progress" role="progressbar" aria-label="Dateidownloads" aria-valuemin="0" aria-valuemax="100"><div id="progress-fill" class="indeterminate"></div></div>
       <div class="loading-bottom"><span id="file">Willkommen bei RealLifeRP.</span><span id="count">BITTE EINEN MOMENT</span></div>
