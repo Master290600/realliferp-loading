@@ -20,7 +20,7 @@ Alternativ Startparameter `+sv_loadingurl` mit derselben URL. `?preview=1` ist a
 
 ## Gestaltung
 
-Fünf unveränderte Originalaufnahmen der Map **rp_evocity_rlrp**, vom Nutzer bereitgestellt. Farblook und Kamerafahrt über CSS. Zwei separat generierte transparente Figuren im GTA-V-Ladebildstil, unabhängig vom Hintergrund bewegt. Keine generierten Ersatzgebäude und keine anderen Maps.
+Fünf unveränderte Originalaufnahmen der Map **rp_evocity_rlrp**, vom Nutzer bereitgestellt. Farblook und Kamerafahrt über CSS. Vier separat generierte transparente Figuren im GTA-V-Ladebildstil, unabhängig vom Hintergrund bewegt. Keine generierten Ersatzgebäude und keine anderen Maps.
 
 Bildwechsel alle 16 Sekunden. Animationen können pausiert werden; reduzierte Bewegung wird berücksichtigt. Das sind animierte Bildebenen, keine laufenden oder per Skelett animierten Figuren.
 
@@ -31,3 +31,4 @@ Statisches HTML/CSS/JavaScript. Kein Backend, keine Tracker oder externen Fonts.
 Die lokale Server-Konfiguration wurde nicht verändert. Ein echter DarkRP-Serverbeitritt ist noch separat zu prüfen.
 
 Technische Quelle: https://wiki.facepunch.com/gmod/Loading_URL
+

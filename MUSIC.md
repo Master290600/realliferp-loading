@@ -26,4 +26,5 @@ Im Spiel startet die Musik nach GameDetails mit der konfigurierten Lautstärke m
 
 ## Bildaufbau
 
-Die fünf Stadtfotos sind byte-identische Kopien der vom Nutzer bereitgestellten Originalaufnahmen von rp_evocity_rlrp. Farbfilter, Zoom und leichte Kamerafahrt erfolgen ausschließlich im CSS. Polizist und Mechanikerin sind separat generierte transparente PNGs im GTA-V-Ladebildstil. Figuren und Hintergrund bewegen sich auf unabhängigen Ebenen. Keine Lauf-, Skelett- oder Körperanimation. „Animation pausieren“ hält Kamerafahrt, Figurenbewegung und Bildwechsel an. Reduzierte Bewegung wird berücksichtigt.
+Die fünf Stadtfotos sind byte-identische Kopien der vom Nutzer bereitgestellten Originalaufnahmen von rp_evocity_rlrp. Farbfilter, Zoom und leichte Kamerafahrt erfolgen ausschließlich im CSS. Polizist, Mechanikerin, Arzt und Waffenhändler sind separat generierte transparente PNGs im GTA-V-Ladebildstil. Figuren und Hintergrund bewegen sich auf unabhängigen Ebenen. Keine Lauf-, Skelett- oder Körperanimation. „Animation pausieren“ hält Kamerafahrt, Figurenbewegung und Bildwechsel an. Reduzierte Bewegung wird berücksichtigt.
+
