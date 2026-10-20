@@ -20,7 +20,7 @@ Alternativ +sv_loadingurl als Startparameter. ?preview=1 zeigt markierte Demo-Do
 
 ## Gestaltung
 
-Fünf unveränderte Originalaufnahmen von rp_evocity_rlrp und vier separat generierte transparente Figuren im GTA-V-Ladebildstil. Figur und Hintergrund bewegen sich unabhängig. Die Stadt wurde nicht neu generiert. 16 Tipps wechseln alle 10 Sekunden, 6 Haupttexte mit Unterzeile alle 12 Sekunden. Bildwechsel alle 16 Sekunden; Animationen können pausiert werden.
+Fünf unveränderte Originalaufnahmen von rp_evocity_rlrp und separate transparente Figurengrafiken im GTA-V-Ladebildstil: Polizist, Mechaniker, Arzt, Gangstergruppe am Waffenladen und ein Mann im Anzug beim Tonstudio. Figur und Hintergrund bewegen sich unabhängig. Die Stadt wurde nicht neu generiert. 16 Tipps wechseln alle 10 Sekunden, 6 Haupttexte mit Unterzeile alle 12 Sekunden. Bildwechsel alle 16 Sekunden; Animationen können pausiert werden.
 
 ## Veröffentlichung
 

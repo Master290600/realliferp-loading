@@ -23,8 +23,8 @@ window.LOADING_CONFIG = {
     { src: "images/rp_evocity_rlrp0000.jpg", character: "images/officer.png", label: "MITTEN IN EVOCITY", credit: "rp_evocity_rlrp · Originalaufnahme" },
     { src: "images/rp_evocity_rlrp0001.jpg", character: "images/mechanic.png", label: "DEIN NÄCHSTES GESCHÄFT", credit: "rp_evocity_rlrp · Originalaufnahme" },
     { src: "images/rp_evocity_rlrp0003.jpg", character: "images/doctor.png", label: "DA, WENN ES ZÄHLT", credit: "rp_evocity_rlrp · Originalaufnahme" },
-    { src: "images/rp_evocity_rlrp0004.jpg", character: "images/merchant.png", label: "DAS RICHTIGE ANGEBOT", credit: "rp_evocity_rlrp · Originalaufnahme" },
-    { src: "images/rp_evocity_rlrp0005.jpg", character: "images/mechanic.png", label: "DEIN FEIERABEND BEGINNT HIER", credit: "rp_evocity_rlrp · Originalaufnahme" }
+    { src: "images/rp_evocity_rlrp0004.jpg", character: "images/gangsters.png", label: "DEINE CREW. DEINE GESCHICHTE.", credit: "rp_evocity_rlrp · Originalaufnahme" },
+    { src: "images/rp_evocity_rlrp0005.jpg", character: "images/suit.png", label: "DEIN FEIERABEND BEGINNT HIER", credit: "rp_evocity_rlrp · Originalaufnahme" }
   ],
   tips: [
     { title: "Deine Rolle beginnt bei dir.", body: "Ob du ein Geschäft eröffnest oder für Ordnung sorgst: Gib deiner Figur eine Geschichte." },
