@@ -33,6 +33,21 @@
   text("footer-brand", (config.name || "RealLifeRP").toUpperCase());
   text("file", "Willkommen bei " + (config.name || "RealLifeRP") + ".");
   if (config.tagline) text("tagline", config.tagline);
+  var headlines = config.headlines || [], headlineIndex = 0;
+  function showHeadline(animate) {
+    var entry = headlines[headlineIndex];
+    if (!entry) return;
+    text("headline-top", entry.top); text("headline-bottom", entry.bottom);
+    text("tagline", entry.tagline || config.tagline || "");
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (animate && !reduced) ["headline-top", "headline-bottom", "tagline"].forEach(function (id) {
+      if (el(id).animate) el(id).animate([{ opacity: 0 }, { opacity: 1 }], { duration: 650, easing: "ease-out" });
+    });
+  }
+  if (headlines.length) {
+    showHeadline(false);
+    setInterval(function () { if (document.hidden) return; headlineIndex = (headlineIndex + 1) % headlines.length; showHeadline(true); }, 12000);
+  }
   if (/^#[0-9a-f]{6}$/i.test(config.accent || "")) document.documentElement.style.setProperty("--accent", config.accent);
   if (/^https:\/\/(discord\.gg|discord\.com)\//i.test(config.discord || "")) {
     el("community").hidden = false; el("discord").href = config.discord; text("discord", config.discord.replace(/^https:\/\//, ""));
