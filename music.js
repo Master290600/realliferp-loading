@@ -59,7 +59,7 @@
       var candidate = (index + step) % tracks.length;
       if (!failed[tracks[candidate].src]) { selectTrack(candidate, resume); return; }
     }
-    noTracks("Musikdateien nicht erreichbar");
+    noTracks("Musikdateien nicht abspielbar");
   }
   function configure(list) {
     tracks = normalise(list); ready = true;
